@@ -1,5 +1,5 @@
 import Header from "./Header";
-import React, { ReactNode } from "react";
+import Reactfrom "react";
 
 
 export default function Layout({children}:any) {
