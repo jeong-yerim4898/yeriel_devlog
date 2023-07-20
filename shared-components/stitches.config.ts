@@ -21,6 +21,7 @@ export const {styled,getCssText} = createStitches({
             blue10: "rgba(51, 83, 251, 0.1)",
             blackDark92: "rgba(0, 0, 0, 0.92)",
             blackDark80: "rgba(0, 0, 0, 0.8)",
+            blackDark70: "rgba(0, 0, 0, 0.7)",
             blackDark60: "rgba(0, 0, 0, 0.6)",
             blackDark40: "rgba(0, 0, 0, 0.4)",
             blackDark30: "rgba(0, 0, 0, 0.3)",
