@@ -120,8 +120,13 @@ React, Next.js, scss, Typescript, HTML 등을 사용하여 `}
         return (<section id={'experience'}>
                 <SectionTitle>Experience.</SectionTitle>
                 <div style={{display:'flex'}}>
-                    <Image src={'/igaworks.webp'} alt={'아이지에이웍스 로고'} width={200} height={200}
-                           style={{borderRadius:"100rem",height:'10rem',width:'10rem'}}/>
+                    <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+                        <Image src={'/igaworks.webp'} alt={'아이지에이웍스 로고'} width={200} height={200}
+                               style={{borderRadius:"100rem",height:'10rem',width:'10rem'}}/>
+                        <p style={{color:COLOR.blackDark70}}>2021.07 ~ 재직 중</p>
+                        <p style={{color:COLOR.blackDark70}}>Front Developer</p>
+                    </div>
+
                     <div style={{marginLeft:'1.5rem'}}>
                         <div>
                             <h2 style={{fontWeight:"bold",fontSize:'2rem'}}>아이지에이웍스</h2>
