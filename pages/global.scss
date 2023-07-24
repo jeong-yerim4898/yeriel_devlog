@@ -7,10 +7,17 @@
   -webkit-tap-highlight-color :transparent;
 }
 
+
+ul, li {
+  padding: 0;
+  margin: 0;
+}
+
 html {
   height: 100%;
   font-size: 16px;
   scroll-behavior: smooth;
+  overflow-y: scroll;
 
   @media only screen and (max-width: 1080px) {
     font-size: 15px;
@@ -18,9 +25,5 @@ html {
 
   @media only screen and (max-width: 800px) {
     font-size: 14px;
-  }
-
-  @media only screen and (max-width: 640px) {
-    font-size: 12px;
   }
 }

@@ -1,4 +1,80 @@
-import {createStitches} from "@stitches/react";
+import {createStitches, globalCss} from "@stitches/react";
+
+export const globalStyles = globalCss({
+    "html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed,figure, figcaption, footer, header, hgroup,menu, nav, output, ruby, section, summary,time, mark, audio, video, sup":
+        {
+            margin: 0,
+            padding: 0,
+            border: 0,
+            fontSize: "100%",
+            font: "inherit",
+            verticalAlign: "baseline",
+        },
+
+    "article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section": {
+        display: "block",
+    },
+
+    "html":{
+        fontSize:"16px",
+        "@media screen and (max-width: 600px)": {
+            fontSize: "12px"
+        },
+    },
+
+    "*": {
+        "webkit-box-sizing": "border-box",
+        "moz-box-sizing": "border-box",
+        boxSizing: "border-box",
+        // Remove scroll style 스크롤 스타일 제거
+        "-ms-overflow-style": "none" /* IE and Edge */,
+        scrollbarWidth: "none" /* Firefox */,
+        touchAction: "manipulation",
+        "-webkit-overflow-scrolling": "touch",
+        "-webkit-tap-highlight-color": "transparent",
+
+        "&::-webkit-scrollbar": {
+            display: "none" /* Chrome, Safari, Opera*/,
+        },
+    },
+
+    "html, body": {
+        width: "100%",
+        padding: 0,
+        margin: 0,
+        background: "#ffffff",
+        fontFamily:
+            "Spoqa Han Sans Neo, Noto Sans Korean, Apple Gothic, NanumBarunGothic, NanumGothic, Malgun Gothic, sans-serif",
+        "-webkit-font-smoothing": "antialiased",
+        "-moz-osx-font-smoothing": "grayscale",
+        "-webkit-appearance": "none",
+    },
+
+    body: {
+        maxHeight: "100vh !important",
+        "@media screen and (max-width: 600px)": {
+        },
+    },
+
+
+    a: {
+        color: "#222222",
+        textDecoration: "none",
+        outline: "none",
+    },
+
+    /* Chrome, Safari, Edge, Opera */
+    "input::-webkit-outer-spin-button, input::-webkit-inner-spin-button": {
+        "-webkit-appearance": "none",
+        margin: 0,
+    },
+
+    /* Firefox */
+    "input[type=number]": {
+        "-moz-appearance": "textfield",
+    },
+});
+
 
 export const {styled,getCssText} = createStitches({
     theme:{
@@ -38,6 +114,9 @@ export const {styled,getCssText} = createStitches({
             2: '15px',
             3: '17px',
         },
+    },
+    media:{
+        sm: "(max-width: 767px)",
+
     }
-    }
-)
+    });

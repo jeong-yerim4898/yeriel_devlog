@@ -2,7 +2,7 @@ import {styled} from "@/shared-components/stitches.config";
 
 const MainHeader = styled('header', {
     position:'relative',
-    width:'100vw',
+    width:'100%',
     padding:'0 3vw',
     height:'4rem',
     color: 'black',

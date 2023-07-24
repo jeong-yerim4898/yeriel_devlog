@@ -1,6 +1,7 @@
 import {styled} from "@/shared-components/index";
 import { COLOR } from "@/styles/index";
 import Image from "next/image";
+import Head from "next/head";
 
 
 const MainContainer = styled('article',{
@@ -9,8 +10,14 @@ const MainContainer = styled('article',{
     alignItems:'center',
     justifyContent:'center',
     padding:'5rem 0',
-    width:'62.5rem',
-    margin:'auto'
+   maxWidth:'45.5rem',
+    width:'100%',
+    margin:'auto',
+    overflow:'scroll',
+    "@sm" :{
+        width:"90%",
+        margin:"auto"
+    }
 });
 
 const SectionTitle = styled('h1',{
@@ -26,7 +33,10 @@ const ProfileSection = styled('section',{
     gap:'2rem',
     alignItems:'center',
     paddingBottom :'2rem',
-    borderBottom :'1px solid $lightGray03'
+    borderBottom :'1px solid $lightGray03',
+    "@sm" :{
+        flexDirection:"column"
+    }
 })
 
 const ProfileWrapper = styled('div', {
@@ -64,7 +74,10 @@ const IntroduceSection = styled('section', {
 const IntroduceContent = styled('div',{
     whiteSpace:'pre-wrap',
     fontSize:'1.125rem',
-    lineHeight:'1.5'
+    lineHeight:'1.5',
+    "@sm": {
+        fontSize: "1rem"
+    }
 });
 
 const EmphasizeWord = styled('span',{
@@ -74,6 +87,13 @@ const EmphasizeWord = styled('span',{
     borderRadius:'.25rem',
     fontWeight:'bold',
 });
+
+const ExperienceWrapper = styled("div", {
+    display:"flex",
+    "@sm": {
+        flexDirection: "column"
+    }
+})
 
 const ExperienceTech = styled('div',{
     display:'flex',
@@ -96,11 +116,44 @@ const ExperienceUl = styled('ul',{
     }
 });
 
+const ContentWrapper = styled("div", {
+    paddingLeft:'12.5rem',
+    "@sm" :{
+        paddingLeft:0
+    }
+})
+
+
 
 
 
 
 export default function Home() {
+
+    const renderProfile = () => {
+        return ( <ProfileSection>
+            <Image src={'/yeriel_profile.jpeg'} alt={'프로필 이미지'} width={200} height={200}
+                   style={{borderRadius:"100rem",height:'20rem',width:'20rem'}}/>
+            <ProfileWrapper>
+                <div>
+                    <ProfileCategory>Blog</ProfileCategory>
+                    <a href={"https://velog.io/@wjd489898"} target={"_blank"} style={{textDecoration:"inherit"}}>
+                        <ResumeLink>https://velog.io/@wjd489898</ResumeLink></a>
+                </div>
+                <div>
+                    <ProfileCategory>Email</ProfileCategory>
+                    <a href={'mailto:wjd489898@gmail.com'} target={"_blank"} style={{textDecoration:"inherit"}}>
+                        <ResumeLink>wjd489898@gmail.com</ResumeLink></a>
+                </div>
+                <div>
+                    <ProfileCategory>GitHub</ProfileCategory>
+                    <a href={'https://github.com/jeong-yerim4898'} target={"_blank"} style={{textDecoration:"inherit"}}></a>
+                    <a href={'https://github.com/jeong-yerim4898'} target={"_blank"} style={{textDecoration:"inherit"}}>
+                        <ResumeLink>https://github.com/jeong-yerim4898</ResumeLink></a>
+                </div>
+            </ProfileWrapper>
+        </ProfileSection>)
+    }
 
     const renderIntroduce = () => {
         return (<IntroduceSection id={'introduce'}>
@@ -119,7 +172,7 @@ React, Next.js, scss, Typescript, HTML 등을 사용하여 `}
     const renderExperience = () => {
         return (<section id={'experience'}>
                 <SectionTitle>Experience.</SectionTitle>
-                <div style={{display:'flex'}}>
+                <ExperienceWrapper>
                     <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
                         <Image src={'/igaworks.webp'} alt={'아이지에이웍스 로고'} width={200} height={200}
                                style={{borderRadius:"100rem",height:'10rem',width:'10rem'}}/>
@@ -176,7 +229,6 @@ React, Next.js, scss, Typescript, HTML 등을 사용하여 `}
                             <a style={{textDecoration:"inherit"}} target={'_blank'} href={'https://landscape.mktcloud.igaworks.com/'}><ResumeLink type={"service"}>https://landscape.mktcloud.igaworks.com/</ResumeLink></a>
                             <ExperienceUl style={{marginLeft:'2rem'}}>
                                 <li><a style={{textDecoration:"inherit"}} target={'_blank'} href={'https://velog.io/@wjd489898/%ED%9B%84%EA%B8%B0-2022-%EB%9E%9C%EB%93%9C%EC%8A%A4%EC%BC%80%EC%9D%B4%ED%94%84-%EA%B0%9C%EB%B0%9C'}><ResumeLink>다양한 애니메이션이 담긴 랜딩페이지</ResumeLink></a>를 통한 통한 사내 서비스 가입 유도</li>
-                                <li>AWS ESC와 CodePipline을 통한 CI/CD 구성</li>
                                 <li>반응형 디자인 적용</li>
                             </ExperienceUl>
                         </div>
@@ -194,12 +246,12 @@ React, Next.js, scss, Typescript, HTML 등을 사용하여 `}
                             <ExperienceUl style={{marginLeft:'2rem'}}>
                                 <li>사내 디자인 시스템 개발</li>
                                 <li>SVG를 활용한 파이차트, 막대차트, 워드클라우드, 지도 차트 개발</li>
-                                <li>메타게임 서비스 Node.js, MongoDB를 통한 백엔드 개발 </li>
+                                <li>메타게임 서비스 Node.js, MongoDB를 통한 WAS 개발 </li>
                                 <li>사내 개인정보처리방침 페이지 개발 및 업데이트</li>
                             </ExperienceUl>
                         </div>
                     </div>
-                </div>
+                </ExperienceWrapper>
             </section>
         )
     };
@@ -207,7 +259,7 @@ React, Next.js, scss, Typescript, HTML 등을 사용하여 `}
     const renderEducation = () => {
         return (<section id={'education'} style={{width:'100%'}}>
             <SectionTitle>Education.</SectionTitle>
-            <div className={'education-wrapper'} style={{paddingLeft:'12.5rem'}}>
+            <ContentWrapper>
                 <div style={{marginBottom:'2rem'}}>
                     <h2 style={{fontWeight:"bold",fontSize:'2rem',paddingBottom:'.25rem'}}>SSAFY 4기</h2>
                     <p style={{color:COLOR.blackDark40,paddingBottom:'.25rem'}}>2020.07 ~ 2021.07</p>
@@ -218,7 +270,7 @@ React, Next.js, scss, Typescript, HTML 등을 사용하여 `}
                     <p style={{color:COLOR.blackDark40,paddingBottom:'.25rem'}}>2015.03 ~ 2020.02</p>
                     <p style={{color:COLOR.blackDark92}}>산업경영공학 전공 & 교내 비전공자 SW교육 과정 1등 수료(2017)</p>
                 </div>
-            </div>
+            </ContentWrapper>
 
         </section>)
     }
@@ -226,50 +278,46 @@ React, Next.js, scss, Typescript, HTML 등을 사용하여 `}
     const renderPosting = () => {
         return (<section id={'posting'} style={{width:'100%'}}>
                 <SectionTitle>Posting.</SectionTitle>
-                    <ul style={{paddingLeft:'12.5rem'}}>
-                        <li>
+                    <ContentWrapper>
+                        <div>
                             <span style={{fontWeight:'bold'}}>2023.07 </span>
                             <a style={{textDecoration:"inherit"}} target={'_blank'} href={'https://devlog.mi.igaw.io/component-date-picker'}><ResumeLink>공공데이터를 활용한 Calendar/DatePicker 구현: 컴포넌트 편
                             </ResumeLink></a>
-                        </li>
-                        <li><span style={{fontWeight:'bold'}}>2023.05 </span>
+                        </div>
+                        <div>
+                            <span style={{fontWeight:'bold'}}>2023.05 </span>
                             <a style={{textDecoration:"inherit"}} target={'_blank'} href={'https://devlog.mi.igaw.io/performance-improvement-wordCloud'}><ResumeLink>내가 만든 워드클라우드 : 성능개선을 위한 여정 (Web Worker)
                             </ResumeLink></a>
-                        </li>
-                    </ul>
+                        </div>
+
+
+                    </ContentWrapper>
 
 
             </section>
         )
     }
     return (
-        <MainContainer>
-            <ProfileSection>
-                    <Image src={'/yeriel_profile.jpeg'} alt={'프로필 이미지'} width={200} height={200}
-                    style={{borderRadius:"100rem",height:'20rem',width:'20rem'}}/>
-                <ProfileWrapper>
-                    <div>
-                        <ProfileCategory>Blog</ProfileCategory>
-                        <a href={"https://velog.io/@wjd489898"} target={"_blank"} style={{textDecoration:"inherit"}}>
-                            <ResumeLink>https://velog.io/@wjd489898</ResumeLink></a>
-                    </div>
-                    <div>
-                        <ProfileCategory>Email</ProfileCategory>
-                        <a href={'mailto:wjd489898@gmail.com'} target={"_blank"} style={{textDecoration:"inherit"}}>
-                            <ResumeLink>wjd489898@gmail.com</ResumeLink></a>
-                    </div>
-                    <div>
-                        <ProfileCategory>GitHub</ProfileCategory>
-                        <a href={'https://github.com/jeong-yerim4898'} target={"_blank"} style={{textDecoration:"inherit"}}></a>
-                        <a href={'https://github.com/jeong-yerim4898'} target={"_blank"} style={{textDecoration:"inherit"}}>
-                            <ResumeLink>https://github.com/jeong-yerim4898</ResumeLink></a>
-                    </div>
-                </ProfileWrapper>
-            </ProfileSection>
+        <>
+            <Head>
+                <title>About Me | 정예림</title>
+                <meta name={"description"} content={"프론트엔드 개발자 정예림의 Resume"}/>
+                <meta property={"og:title"} content="About Me | 정예림" key="title"/>
+                <link rel={"canonical"} key={"canonical"} href={"https://yeriel-devlog.vercel.app/"}/>
+                <meta property={"og:locale"} content="ko_KR"/>
+                <meta property={"og:type"} content={"website"}/>
+                <meta property={"og:article:author"} content={"yeriel"}/>
+                <meta property={"og:article:author:url"} content={"https://www.igaworks.com"}/>
+                <meta property={"og:url"} key={"og:url"} content={"https://yeriel-devlog.vercel.app/"}/>
+            </Head>
+            <MainContainer>
+            {renderProfile()}
             {renderIntroduce()}
             {renderExperience()}
             {renderEducation()}
             {renderPosting()}
         </MainContainer>
+        </>
+
     );
 }
