@@ -188,7 +188,7 @@ React, Next.js, scss, Typescript, HTML 등을 사용하여 `}
                                 데이터 시각화에 필요한 차트, 다양한 컴포넌트, 랜딩페이지,팀 기술블로그 등 다양한 웹 서비스를 만들고 유지보수 하고 있습니다.</div>
                         </div>
                         <div>
-                            <h4 style={{display:'block',fontWeight:"bold",fontSize:'1.25rem',marginTop:"1.5rem",marginBottom:'0.8125rem'}}>ZTL (23.05 ~ 23.06)</h4>
+                            <h4 style={{display:'block',fontWeight:"bold",fontSize:'1.25rem',marginTop:"1.5rem",marginBottom:'0.8125rem'}}>ZTL 시연 발표용 (23.05 ~ 23.06)</h4>
                             <ExperienceTech>
                                 <span>React</span>
                                 <span>Typescript</span>
@@ -196,12 +196,13 @@ React, Next.js, scss, Typescript, HTML 등을 사용하여 `}
                                 <span>SCSS</span>
                             </ExperienceTech>
                             <ExperienceUl style={{marginLeft:'2rem'}}>
-                                <li>기존의 컴포넌트 성능개선 (셀렉트, 체크박스,스위치, 데이트피커 등) 맟 CRUD 페이지 개발</li>
-                                <li>업종 선택필터 개발 및 API 연결</li>
+                                <li>서비스에 맞는 컴포넌트 기능을 개선. (셀렉트의 그룹화 기능추가, 체크박스의 전체 선택 기능 로직 수정, 데이터 피커 선택옵션 변경 및 기간 선택 기능 개선)</li>
+                                <li>CRUD가 가능한 분석 에디터 개발</li>
+                                <li>fetch를 활용한 RESTful API와 통신</li>
                             </ExperienceUl>
                         </div>
                         <div>
-                            <h4 style={{display:'block',fontWeight:"bold",fontSize:'1.25rem',marginTop:"1.5rem",marginBottom:'0.8125rem'}}>사내 개발블로그 개발 (23.03 ~ 23.07)</h4>
+                            <h4 style={{display:'block',fontWeight:"bold",fontSize:'1.25rem',marginTop:"1.5rem",marginBottom:'0.8125rem'}}>팀 개발블로그 개발 (23.03 ~ 23.07)</h4>
                             <ExperienceTech>
                                 <span>Next.js</span>
                                 <span>Typescript</span>
@@ -212,9 +213,10 @@ React, Next.js, scss, Typescript, HTML 등을 사용하여 `}
                             <a style={{textDecoration:"inherit"}} target={'_blank'} href={'https://devlog.mi.igaw.io/'}><ResumeLink type={"service"}>https://devlog.mi.igaw.io/</ResumeLink></a>
                             <ExperienceUl style={{marginLeft:'2rem'}}>
                                 <li>Next.js를 활용한 사내 개발블로그 개발 (디자인, 개발 모두 수행)</li>
-                                <li>AWS CodePiple을 통해 CI/CD 구성</li>
-                                <li>포스팅 CRUD에 필요한 기술 개발(마크다운, 이미지 업로드, 개인 URI 설정 등)</li>
-                                <li>쿠키를 활용한 좋아요 기능 구현, Intersection Observer을 통한 InfiniteScroll 구현</li>
+                                <li>AWS의 CodePipleline으로 CI/CD 구성</li>
+                                <li>포스팅 CRUD에 필요한 페이지 개발 및 GraphQL API와 통신</li>
+                                <li>쿠키를 응용한 로그인 없이도 가능한 좋아요 기능.</li>
+                                <li>사용자 경험 제공을 위해 Intersection Observer을 사용한 InfiniteScroll 구현</li>
                             </ExperienceUl>
                         </div>
                         <div>
@@ -228,8 +230,9 @@ React, Next.js, scss, Typescript, HTML 등을 사용하여 `}
                             </ExperienceTech>
                             <a style={{textDecoration:"inherit"}} target={'_blank'} href={'https://landscape.mktcloud.igaworks.com/'}><ResumeLink type={"service"}>https://landscape.mktcloud.igaworks.com/</ResumeLink></a>
                             <ExperienceUl style={{marginLeft:'2rem'}}>
+                                <li>프론트엔드 기술환경 구성 및 기본 기능 구현</li>
                                 <li><a style={{textDecoration:"inherit"}} target={'_blank'} href={'https://velog.io/@wjd489898/%ED%9B%84%EA%B8%B0-2022-%EB%9E%9C%EB%93%9C%EC%8A%A4%EC%BC%80%EC%9D%B4%ED%94%84-%EA%B0%9C%EB%B0%9C'}><ResumeLink>다양한 애니메이션이 담긴 랜딩페이지</ResumeLink></a>를 통한 통한 사내 서비스 가입 유도</li>
-                                <li>반응형 디자인 적용</li>
+                                <li>모바일에 대응하는 반응형 개발 </li>
                             </ExperienceUl>
                         </div>
                         <div>
@@ -245,9 +248,9 @@ React, Next.js, scss, Typescript, HTML 등을 사용하여 `}
                             </ExperienceTech>
                             <ExperienceUl style={{marginLeft:'2rem'}}>
                                 <li>사내 디자인 시스템 개발</li>
-                                <li>SVG를 활용한 파이차트, 막대차트, 워드클라우드, 지도 차트 개발</li>
-                                <li>메타게임 서비스 Node.js, MongoDB를 통한 WAS 개발 </li>
-                                <li>사내 개인정보처리방침 페이지 개발 및 업데이트</li>
+                                <li>파이차트, 막대차트, 워드클라우드 등 데이터 시각화 컴포넌트 개발</li>
+                                <li>Node.js와 MongoDB를 연결한 WAS 개발 </li>
+                                <li>서비스 개인정보처리방침 페이지 개발 및 재동의, 재로그인 페이지 개발</li>
                             </ExperienceUl>
                         </div>
                     </div>
